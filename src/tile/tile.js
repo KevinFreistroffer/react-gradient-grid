@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './styles.scss';
 
 class Tile extends Component {
   constructor(props) {
@@ -6,7 +7,7 @@ class Tile extends Component {
     this.state = {};
   }
   render() {
-    return <li className='tile'>Tile</li>;
+    return <li className='tile'>Tile {this.props.id + 1}</li>;
   }
 }
 

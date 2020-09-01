@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './styles.css';
-import Dragger from './dragger.js';
-import Tile from './tile.js';
+import './styles.scss';
+import Dragger from '../dragger/dragger.js';
+import Tile from '../tile/tile.js';
 
 class Grid extends Component {
   constructor(props) {
@@ -66,7 +66,7 @@ class Grid extends Component {
     console.log('outputTiles()');
     let components = [];
     for (let i = 0; i < 16; i++) {
-      components.push(<Tile key={i} />);
+      components.push(<Tile key={i} id={i} />);
     }
 
     return components;
@@ -87,7 +87,7 @@ class Grid extends Component {
         <Dragger
           x={this.state.draggerX}
           y={this.state.draggerY}
-          childOutputMethod={this.handleOnDrag}
+          collectXAndYCoordinates={this.handleOnDrag}
           handleOnDragEnd={this.handleOnDragEnd}
         ></Dragger>
         <ul>{this.outputTile()}</ul>
